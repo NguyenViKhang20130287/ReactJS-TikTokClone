@@ -1,0 +1,79 @@
+.wrapper {
+  font-size: 16px;
+  font-weight: 700;
+  min-width: 100px;
+  padding: 7px 16px;
+  border-radius: 4px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  + .wrapper {
+    margin-left: 8px;
+
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+
+  // css left icon
+  display: flex;
+  align-items: center;
+  svg{
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
+  }
+
+}
+
+//
+.rounded {
+  border-radius: 999px;
+  border: 1px solid var(--borderColor);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  &:hover {
+    border-color: rgba(22, 24, 35, 0.2);
+    background-color: var(--hoverColor);
+  }
+}
+
+.primary {
+  background-color: var(--primaryColor);
+  color: #fff;
+  border-color: var(--primaryColor);
+
+  &:hover {
+    border-color: var(--primaryColor);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),
+      var(--primaryColor);
+  }
+}
+
+.normal {
+  background: #fff;
+  border: 1px solid var(--borderColor);
+  transition: all 0.3s;
+
+  &:hover {
+    background: var(--hoverColor);
+  }
+}
+
+.outline {
+  color: var(--primaryColor);
+  border: 1px solid currentColor;
+
+  &:hover {
+    background-color: rgba(254, 44, 85, 0.06);
+    border-color: var(--primaryColor);
+  }
+}
+
+// button size
+.small {
+  min-width: 88px;
+  padding: 4px 16px;
+}

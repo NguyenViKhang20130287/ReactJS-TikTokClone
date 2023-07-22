@@ -1,0 +1,50 @@
+.content {
+  max-width: 224px;
+  padding: 0;
+
+  button,
+  a {
+    box-sizing: border-box;
+    width: 100%;
+    // display: flex;
+    // align-items: center;
+    font-weight: normal;
+    padding: 10px;
+    transition: all 0.3s;
+    font-size: 16px;
+
+    &:hover {
+      background: var(--hoverColor);
+    }
+  }
+
+  .more-btn-item {
+    // border: 1px solid #000;
+    + .more-btn-item {
+      margin-left: 0;
+    }
+  }
+
+  // header
+  .menu-header {
+    display: flex;
+    align-items: center;
+    max-width: 224px;
+
+    .menu-header-btn-back {
+      width: 50px;
+      height: 100%;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .menu-header-title {
+      width: 100%;
+      font-size: 16px;
+      margin-left: 10px;
+      h4 {
+        font-weight: 600;
+      }
+    }
+  }
+}

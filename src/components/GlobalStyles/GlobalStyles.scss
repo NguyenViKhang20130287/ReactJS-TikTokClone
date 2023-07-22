@@ -1,7 +1,27 @@
 @import 'normalize.css';
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+:root{
+    --primaryColor: #fe2c55;
+    --borderColor: #1618231F;
+    --hoverColor: rgba(22, 24, 35, 0.03)
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    // font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+button, input, [tabindex]{
+    border: none;
+    outline: none;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+    font-weight: normal;
 }
