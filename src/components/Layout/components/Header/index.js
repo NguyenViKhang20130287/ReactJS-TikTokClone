@@ -1,21 +1,9 @@
-import styles from "./Header.module.scss";
-import Images from "../../../../assets/images";
-import { Wrappers as PopperWrapper } from "../../../Popper";
-
-import classNames from "classnames/bind";
-import HeadlessTippy from "@tippyjs/react/headless";
-import Tippy from "@tippyjs/react";
-import "tippy.js/dist/tippy.css";
-
+// icons
 import {
-  FaSearch,
-  FaRegTimesCircle,
   FaEllipsisV,
-  FaSpinner,
   FaRegQuestionCircle
 } from "react-icons/fa";
 import {
-  FaSistrix,
   FaEarthAsia,
   FaRegPaperPlane,
   FaRegMessage,
@@ -28,13 +16,23 @@ import {
   FaArrowRightFromBracket
 } from "react-icons/fa6";
 import { BsGear } from 'react-icons/bs'
-import { useEffect, useState } from "react";
-import AccountItem from "../../../AccountItem";
+
+// components
+import Images from "../../../../assets/images";
+import styles from "./Header.module.scss";
 import Menu from "../../../Popper/Menu";
 import Button from "../../../Button";
 import Image from "../../../Image";
 
+// libs
+import classNames from "classnames/bind";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
+import { useEffect, useState } from "react";
+import Search from "../Search";
+
 const cx = classNames.bind(styles);
+
 const MENU_ITEMS = [
   {
     icon: <FaEarthAsia />,
@@ -98,18 +96,10 @@ const MENU_ITEMS_USER = [
 ]
 
 function Header() {
-  //
-  const [searchResult, setSearchResult] = useState([]);
 
   //
   const currentUser = true
   // console.log('>>> CHECK ITEMS USER: ', MENU_ITEMS_USER);
-
-  useEffect(() => {
-    setTimeout(() => {
-      // setSearchResult([1, 2, 3]);
-    }, 500);
-  }, []);
 
   const handleMenuChange = (MenuItem) => {
     switch (MenuItem.type) {
@@ -130,67 +120,8 @@ function Header() {
           <img src={Images.logo.default} alt="Tiktok"></img>
         </div>
 
-        <HeadlessTippy
-          interactive
-          visible={searchResult.length > 0}
-          render={(attrs) => (
-            <div className={cx("search-result")} tabIndex="-1" {...attrs}>
-              <PopperWrapper>
-                <div className={cx("search-title")}>
-                  <FaSistrix
-                    style={{
-                      fontSize: "15px",
-                      marginRight: "10px",
-                      fontWeight: "100",
-                    }}
-                  />
-                  <h4>title</h4>
-                </div>
-                <div className={cx("search-title")}>
-                  <FaSistrix
-                    style={{
-                      fontSize: "15px",
-                      marginRight: "10px",
-                      fontWeight: "100",
-                    }}
-                  />
-                  <h4>title</h4>
-                </div>
-                <div className={cx("search-title")}>
-                  <FaSistrix
-                    style={{
-                      fontSize: "15px",
-                      marginRight: "10px",
-                      fontWeight: "100",
-                    }}
-                  />
-                  <h4>title</h4>
-                </div>
-                <AccountItem />
-                <AccountItem />
-                <AccountItem />
-              </PopperWrapper>
-            </div>
-          )}
-        >
-          <div className={cx("search")}>
-            <input type="text" placeholder="Tìm kiếm" />
-            <div className={cx("search-container")}>
-              <button className={cx("clear-btn")}>
-                <FaRegTimesCircle />
-              </button>
-              <div className={cx("loading-icon")}>
-                <FaSpinner />
-              </div>
-            </div>
-
-            <span className={cx("split")}></span>
-
-            <button className={cx("search-btn")}>
-              <FaSearch />
-            </button>
-          </div>
-        </HeadlessTippy>
+        {/* Search */}
+        <Search />
 
         {/* logged/not logged */}
         <div className={cx("options")}>

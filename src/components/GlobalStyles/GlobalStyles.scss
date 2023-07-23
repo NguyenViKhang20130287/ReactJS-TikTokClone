@@ -1,5 +1,5 @@
 @import "normalize.css";
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto:wght@100&display=swap");
 
 :root {
   --primaryColor: #fe2c55;
@@ -11,8 +11,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // font-family: Arial, Helvetica, sans-serif;
-  font-family: "Roboto", sans-serif;
+  font-family: "IBM Plex Sans", TikTokFont, Arial, Tahoma, PingFangSC,
+    sans-serif;
 }
 
 button,
@@ -43,10 +43,10 @@ a {
 }
 
 .tippy-arrow {
-    color:  rgba(84, 84, 84);
+  color: rgba(84, 84, 84);
   height: 8px;
 }
 
-.tippy-content{
-    padding: 0 5px;
+.tippy-content {
+  padding: 0 5px;
 }
