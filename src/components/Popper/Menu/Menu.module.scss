@@ -5,11 +5,10 @@
   button,
   a {
     box-sizing: border-box;
+    height: 41px;
     width: 100%;
-    // display: flex;
-    // align-items: center;
     font-weight: normal;
-    padding: 10px;
+    padding: 10px 8px 10px 16px;
     transition: all 0.3s;
     font-size: 16px;
 
@@ -18,11 +17,13 @@
     }
   }
 
-  .more-btn-item {
-    // border: 1px solid #000;
-    + .more-btn-item {
+  .menu-btn-item {
+    + .menu-btn-item {
       margin-left: 0;
     }
+  }
+  .separate{
+    border-top: 1px solid var(--borderColor);
   }
 
   // header

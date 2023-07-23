@@ -12,8 +12,10 @@ const cx = classNames.bind(styles);
 
 function Menu({ children, items = [], onChange = {} }) {
 
+  //
   const [history, setHistory] = useState([{ data: items }])
   const current = history[history.length - 1]
+
   // console.log('>>> CHECK CURRENT ITEM: ', current.data.title);
 
   const renderItems = () => {
@@ -24,7 +26,7 @@ function Menu({ children, items = [], onChange = {} }) {
         onClick={() => {
           if (isParent) {
             setHistory((prev) => [...prev, item.child_item])
-          }else{
+          } else {
             onChange(item)
           }
         }}
@@ -32,7 +34,7 @@ function Menu({ children, items = [], onChange = {} }) {
     })
   }
 
-  const handleBackMenu = () =>{
+  const handleBackMenu = () => {
     setHistory((prev) => history.slice(0, prev.length - 1))
   }
   // console.log('>>>CHECK HISTORY: ', history);
@@ -40,7 +42,8 @@ function Menu({ children, items = [], onChange = {} }) {
   return (
     <Tippy
       interactive
-      visible
+      // visible
+      delay={[0, 700]}
       placement="bottom-end"
       render={(attrs) => (
         <div className={cx("content")} tabIndex="-1" {...attrs}>
@@ -50,9 +53,13 @@ function Menu({ children, items = [], onChange = {} }) {
           </PopperWrapper>
         </div>
       )}
+      onHide={() => {
+        setHistory(prev => prev.slice(0, 1))
+      }}
     >
       {children}
     </Tippy>
+
   );
 }
 

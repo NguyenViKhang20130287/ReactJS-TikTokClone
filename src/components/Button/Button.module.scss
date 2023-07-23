@@ -2,11 +2,12 @@
   font-size: 16px;
   font-weight: 700;
   min-width: 100px;
-  padding: 7px 16px;
+  padding: 4px 16px;
   border-radius: 4px;
   background-color: #fff;
   border: 1px solid transparent;
   cursor: pointer;
+  height: 36px;
 
   + .wrapper {
     margin-left: 8px;
@@ -20,12 +21,11 @@
   // css left icon
   display: flex;
   align-items: center;
-  svg{
+  svg {
     height: 20px;
     width: 20px;
     margin-right: 10px;
   }
-
 }
 
 //
@@ -39,6 +39,22 @@
     background-color: var(--hoverColor);
   }
 }
+
+.separate{
+  border-top: 1px solid var(--borderColor);
+}
+
+.onlyIcon {
+  // border: 1px solid #000;
+  // padding: 7px 10px;
+  min-width: 32px;
+  svg {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+
 
 .primary {
   background-color: var(--primaryColor);

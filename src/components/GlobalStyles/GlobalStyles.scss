@@ -1,27 +1,52 @@
-@import 'normalize.css';
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import "normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
 
-:root{
-    --primaryColor: #fe2c55;
-    --borderColor: #1618231F;
-    --hoverColor: rgba(22, 24, 35, 0.03)
+:root {
+  --primaryColor: #fe2c55;
+  --borderColor: #1618231f;
+  --hoverColor: rgba(22, 24, 35, 0.03);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    // font-family: Arial, Helvetica, sans-serif;
-    font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-button, input, [tabindex]{
-    border: none;
-    outline: none;
+button,
+input,
+[tabindex] {
+  border: none;
+  outline: none;
 }
 
-a{
-    text-decoration: none;
-    color: #000;
-    font-weight: normal;
+a {
+  text-decoration: none;
+  color: #000;
+  font-weight: normal;
+}
+
+.tippy-box {
+  // border: 1px solid red;
+  text-align: left;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 0.03px;
+  background-color: rgba(84, 84, 84);
+  color: rgb(255, 255, 255);
+  padding: 8px;
+}
+
+.tippy-arrow {
+    color:  rgba(84, 84, 84);
+  height: 8px;
+}
+
+.tippy-content{
+    padding: 0 5px;
 }
