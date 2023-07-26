@@ -23,39 +23,46 @@
     background: none;
     border: none;
 
-    &:not(:placeholder-shown){
-        .search-btn {
-            color: currentColor;
-          }
+    &:not(:placeholder-shown) {
+      .search-btn {
+        color: currentColor;
+      }
     }
-
   }
 
   button {
     display: flex;
     align-items: center;
-    padding: 11px 16px 11px 12px;
-    border: none;
-    font-size: 18px;
     color: #a7a7ab;
+    cursor: pointer;
   }
 
   .search-container {
     position: relative;
-    padding: 11px 16px 11px 12px;
+    width: 40px;
+    height: 16px;
 
-    .clear-btn {
-      font-size: 14px;
-      padding: 0;
+    .clear-btn, .loading-icon {
+      top: 0;
+      right: 10px;
+      position: absolute;
+
+      height: 16px;
+      width: 16px;
+
     }
 
     .loading-icon {
-      display: none;
-      position: absolute;
-      font-size: 14px;
-      padding: 11px 16px 11px 12px;
-      right: 0;
-      top: 0;
+      animation: spinner 1s linear infinite;
+    }
+
+    @keyframes spinner {
+      from {
+        transform: rotate(0);
+      }
+      to {
+        transform: rotate(360deg);
+      }
     }
   }
 
@@ -67,6 +74,7 @@
 
   .search-btn {
     box-sizing: border-box;
+    padding: 11px 16px 11px 12px;
     width: 52px;
     height: 46px;
     transition: 0.3s;

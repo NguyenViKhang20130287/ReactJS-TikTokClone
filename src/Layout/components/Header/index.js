@@ -18,17 +18,16 @@ import {
 import { BsGear } from 'react-icons/bs'
 
 // components
-import Images from "../../../../assets/images";
 import styles from "./Header.module.scss";
-import Menu from "../../../Popper/Menu";
-import Button from "../../../Button";
-import Image from "../../../Image";
+import Menu from "../../../components/Popper/Menu";
+import Images from '../../../assets/images';
+import Image from '../../../components/Image'
+import Button from "../../../components/Button";
 
 // libs
 import classNames from "classnames/bind";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
-import { useEffect, useState } from "react";
 import Search from "../Search";
 
 const cx = classNames.bind(styles);
@@ -99,6 +98,7 @@ function Header() {
 
   //
   const currentUser = true
+
   // console.log('>>> CHECK ITEMS USER: ', MENU_ITEMS_USER);
 
   const handleMenuChange = (MenuItem) => {
@@ -117,7 +117,7 @@ function Header() {
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
         <div className={cx("logo")}>
-          <img src={Images.logo.default} alt="Tiktok"></img>
+          <img src={Images.logo.default} alt="Tiktok"/>
         </div>
 
         {/* Search */}

@@ -2,6 +2,7 @@
     padding: 10px;
     display: flex;
     align-self: center;
+    cursor: pointer;
 
     .avatar {
         width: 40px;
@@ -17,7 +18,7 @@
     }
 
     .info {
-        padding: 5px;
+        padding: 5px 10px;
 
         .username {
             display: flex;

@@ -1,13 +1,14 @@
 // icons
 import { FaSistrix } from 'react-icons/fa6';
-import {
-    FaRegTimesCircle, FaSpinner,
-} from "react-icons/fa"
+import {FaTimesCircle} from "react-icons/fa"
 import { AiOutlineSearch } from 'react-icons/ai'
+import { ImSpinner2 } from 'react-icons/im'
+
 // components
-import AccountItem from "../../../AccountItem";
-import { Wrappers as PopperWrapper } from "../../../Popper";
+import AccountItem from '../../../components/AccountItem'
+import { Wrappers as PopperWrapper } from "../../../components/Popper";
 import styles from './Search.module.scss'
+
 // libs
 import HeadlessTippy from "@tippyjs/react/headless";
 import classNames from 'classnames/bind';
@@ -23,6 +24,7 @@ function Search() {
     const [searchValue, setSearchValue] = useState('')
     const [searchResult, setSearchResult] = useState([]);
     const [showTippy, setShowTippy] = useState(true)
+    const [loading, setLoading] = useState(false)
 
     // 
     const searchRef = useRef()
@@ -30,18 +32,32 @@ function Search() {
     //
     const handleClearInput = (e) => {
         e.preventDefault()
+        setSearchResult([])
         setSearchValue("")
         searchRef.current.focus()
     }
-    const handleHideTippyResult = () =>{
+    const handleHideTippyResult = () => {
         setShowTippy(false)
     }
 
     useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([1, 2, 3]);
-        }, 500);
-    }, []);
+
+        if (!searchValue.trim()) {
+            setSearchResult([])
+            setLoading(false)
+            return
+        }
+
+        setLoading(true)
+
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+            .then(res => res.json())
+            .then(res => {
+                // console.log('>>> CHECK RES: ', res.data);
+                setSearchResult(res.data)
+                setLoading(false)
+            })
+    }, [searchValue]);
 
     return (
         <HeadlessTippy
@@ -54,9 +70,9 @@ function Search() {
                             <FaSistrix />
                             <h4>title</h4>
                         </div>
-                        <AccountItem />
-                        <AccountItem />
-                        <AccountItem />
+                        {searchResult.map(result =>
+                            <AccountItem key={result.id} data={result} />
+                        )}
                     </PopperWrapper>
                 </div>
             )}
@@ -69,15 +85,15 @@ function Search() {
                     onChange={e => setSearchValue(e.target.value)}
                     onFocus={() => setShowTippy(true)} />
                 <div className={cx("search-container")}>
-                    {!!searchValue && (
+                    {!!searchValue && !loading && (
                         <button className={cx("clear-btn")} onClick={(e) => handleClearInput(e)}>
-                            <FaRegTimesCircle />
+                            <FaTimesCircle />
                         </button>
                     )}
 
-                    <div className={cx("loading-icon")}>
-                        <FaSpinner />
-                    </div>
+                    {loading && <div className={cx("loading-icon")}>
+                        <ImSpinner2 />
+                    </div>}
                 </div>
 
                 <span className={cx("split")}></span>

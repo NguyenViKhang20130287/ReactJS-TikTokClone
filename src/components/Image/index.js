@@ -1,13 +1,13 @@
 
 import { useState } from 'react';
-import images from '../../assets/images'
+import Images from '../../assets/images'
 
-function Image({ src, alt, failBack: customFallBack = images.defaultUser, ...props }) {
+function Image({ src, alt, failBack: customFallBack = Images.defaultUser, ...props }) {
 
     const [failBack, setFailBack] = useState('')
 
     const handleError = () =>{
-        setFailBack(images.defaultUser)
+        setFailBack(Images.defaultUser)
     }
 
     return (<img alt={alt} src={failBack || src} onError={handleError} {...props}/>);
