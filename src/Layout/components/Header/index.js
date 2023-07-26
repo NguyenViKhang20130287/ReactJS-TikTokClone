@@ -29,6 +29,8 @@ import classNames from "classnames/bind";
 import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import Search from "../Search";
+import { Link } from "react-router-dom";
+import routesConfig from "../../../config/routes";
 
 const cx = classNames.bind(styles);
 
@@ -48,7 +50,47 @@ const MENU_ITEMS = [
           type: 'language',
           code: 'en',
           title: 'English'
-        }
+        },
+        {
+          type: 'language',
+          code: 'vi',
+          title: 'Tiếng Việt (Việt Nam)'
+        },
+        {
+          type: 'language',
+          code: 'en',
+          title: 'English'
+        },
+        {
+          type: 'language',
+          code: 'vi',
+          title: 'Tiếng Việt (Việt Nam)'
+        },
+        {
+          type: 'language',
+          code: 'en',
+          title: 'English'
+        },
+        {
+          type: 'language',
+          code: 'vi',
+          title: 'Tiếng Việt (Việt Nam)'
+        },
+        {
+          type: 'language',
+          code: 'en',
+          title: 'English'
+        },
+        {
+          type: 'language',
+          code: 'vi',
+          title: 'Tiếng Việt (Việt Nam)'
+        },
+        {
+          type: 'language',
+          code: 'en',
+          title: 'English'
+        },
       ]
     }
   },
@@ -116,9 +158,9 @@ function Header() {
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
-        <div className={cx("logo")}>
+        <Link to={routesConfig.home} className={cx("logo")}>
           <img src={Images.logo.default} alt="Tiktok"/>
-        </div>
+        </Link>
 
         {/* Search */}
         <Search />
@@ -141,7 +183,7 @@ function Header() {
                 </span>
               </Tippy>
 
-              <Menu items={MENU_ITEMS_USER}>
+              <Menu items={MENU_ITEMS_USER} hideOnClick={false}>
                 <div className={cx('avatar')}>
                   <Image src="https://img6.thuthuatphanmem.vn/uploads/2022/10/23/anh-avatar-cute_031457390.jpg" alt="" />
                 </div>
