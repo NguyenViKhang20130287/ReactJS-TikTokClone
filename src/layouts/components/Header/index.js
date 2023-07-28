@@ -30,7 +30,7 @@ import Tippy from "@tippyjs/react";
 import "tippy.js/dist/tippy.css";
 import Search from "../Search";
 import { Link } from "react-router-dom";
-import routesConfig from "../../../config/routes";
+import config from "../../../config";
 
 const cx = classNames.bind(styles);
 
@@ -139,7 +139,7 @@ const MENU_ITEMS_USER = [
 function Header() {
 
   //
-  const currentUser = true
+  const currentUser = false
 
   // console.log('>>> CHECK ITEMS USER: ', MENU_ITEMS_USER);
 
@@ -158,7 +158,7 @@ function Header() {
   return (
     <header className={cx("wrapper")}>
       <div className={cx("inner")}>
-        <Link to={routesConfig.home} className={cx("logo")}>
+        <Link to={config.home} className={cx("logo")}>
           <img src={Images.logo.default} alt="Tiktok"/>
         </Link>
 
@@ -194,7 +194,7 @@ function Header() {
             : (
               <>
                 <Button normal leftIcon={<FaPlus />}> Tải lên</Button>
-                <Button primary>Đăng nhập</Button>
+                <Button primary href={''}>Đăng nhập</Button>
 
                 <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                   <button className={cx("more-btn")}><FaEllipsisV /></button>

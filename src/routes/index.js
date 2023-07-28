@@ -6,17 +6,17 @@ import Upload from "../pages/Upload";
 import Search from "../pages/Search";
 
 //
-import routesConfig from '../config/routes';
+import config from '../config';
 
 // Layout
-import { HeaderLayout } from "../Layout";
+import { HeaderLayout } from "../layouts";
 
 const publicRoutes = [
-  { path: routesConfig.home, component: Home },
-  { path: routesConfig.following, component: Following },
-  { path: routesConfig.profile, component: Profile },
-  { path: routesConfig.upload, component: Upload, layout: HeaderLayout },
-  { path: routesConfig.search, component: Search },
+  { path: config.routes.home, component: Home },
+  { path: config.routes.following, component: Following },
+  { path: config.routes.profile, component: Profile },
+  { path: config.routes.upload, component: Upload, layout: HeaderLayout },
+  { path: config.routes.search, component: Search },
 ];
 const privateRoutes = [];
 

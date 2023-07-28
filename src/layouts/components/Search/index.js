@@ -9,7 +9,7 @@ import AccountItem from '../../../components/AccountItem'
 import { Wrappers as PopperWrapper } from "../../../components/Popper";
 import styles from './Search.module.scss'
 import useDebounce from '../../../hooks/useDebounce';
-import * as service from '../../../service/searchService'
+import * as services from '../../../services/searchService'
 
 
 // libs
@@ -67,7 +67,7 @@ function Search() {
             //
             setLoading(true)
 
-            const result = await service.search(encodeURIComponent(debounced));
+            const result = await services.search(encodeURIComponent(debounced));
 
             //
             setSearchResult(result)

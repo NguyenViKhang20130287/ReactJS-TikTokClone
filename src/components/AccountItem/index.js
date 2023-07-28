@@ -2,7 +2,8 @@ import { FaCheckCircle } from "react-icons/fa";
 import classNames from "classnames/bind";
 import styles from "./AccountItem.module.scss";
 import Image from '../Image'
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
+import propTypes from 'prop-types';
 
 const cx = classNames.bind(styles);
 
@@ -33,6 +34,10 @@ function AccountItem({ data }) {
       </Link>
     </div>
   );
+}
+
+AccountItem.propTypes = {
+  data: propTypes.object.isRequired
 }
 
 export default AccountItem;

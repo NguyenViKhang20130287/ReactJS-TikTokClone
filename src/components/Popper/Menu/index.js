@@ -37,13 +37,16 @@ function Menu({ children, items = [], onChange = {}, hideOnClick }) {
   const handleBackMenu = () => {
     setHistory((prev) => history.slice(0, prev.length - 1))
   }
+  const handleResetMenu = () => {
+    setHistory(prev => prev.slice(0, 1))
+  }
   // console.log('>>>CHECK HISTORY: ', history);
 
   return (
     <Tippy
       interactive
       // visible
-      hideOnClick = {hideOnClick}
+      hideOnClick={hideOnClick}
       delay={[0, 700]}
       placement="bottom-end"
       render={(attrs) => (
@@ -54,9 +57,7 @@ function Menu({ children, items = [], onChange = {}, hideOnClick }) {
           </PopperWrapper>
         </div>
       )}
-      onHide={() => {
-        setHistory(prev => prev.slice(0, 1))
-      }}
+      onHide={handleResetMenu}
     >
       {children}
     </Tippy>
