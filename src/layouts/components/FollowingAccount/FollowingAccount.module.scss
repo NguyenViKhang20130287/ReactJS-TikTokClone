@@ -1,0 +1,87 @@
+.wrapper {
+  &::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 0px;
+    height: 1px;
+    background: rgba(22, 24, 35, 0.12);
+    transform: scaleY(0.5);
+  }
+  //   border-top: 1px solid var(--borderColor);
+
+  padding: 16px 0px;
+  color: rgba(22, 24, 35, 0.75);
+  font-family: "IBM Plex Sans", TikTokFont, Arial, Tahoma, PingFangSC,
+    sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.093px;
+  position: relative;
+
+  .title {
+    padding: 0px 8px;
+    margin-bottom: 8px;
+    font-family: "IBM Plex Sans", TikTokFont, Arial, Tahoma, PingFangSC,
+      sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.093px;
+  }
+
+  .accounts {
+    .account-item {
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      //   margin-bottom: 5px;
+      .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 12px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .info {
+        // padding: 5px 10px;
+
+        .username {
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+        }
+
+        .name {
+          font-size: 14px;
+          color: #16182380;
+        }
+      }
+    }
+  }
+
+  .more {
+    background: transparent;
+    border: none;
+    padding: 0px 8px;
+    margin-top: 8px;
+    cursor: pointer;
+    p {
+      color: var(--primaryColor);
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 0.093px;
+    }
+  }
+}

@@ -5,6 +5,7 @@
   --primaryColor: #fe2c55;
   --borderColor: #1618231f;
   --hoverColor: rgba(22, 24, 35, 0.03);
+  --textColor: #161823;
 }
 
 * {
@@ -24,7 +25,7 @@ input,
 
 a {
   text-decoration: none;
-  color: #000;
+  color: var(--textColor);
   font-weight: normal;
 }
 
@@ -50,3 +51,7 @@ a {
 .tippy-content {
   padding: 0 5px;
 }
+
+// .active{
+//   color: var(--primaryColor);
+// }

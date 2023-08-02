@@ -1,0 +1,54 @@
+.sidebar {
+  width: 240px;
+  min-height: 100%;
+  padding: 20px 0px 26px 8px;
+
+  .footer-sidebar {
+    span,
+    a {
+      color: rgba(22, 24, 35, 0.5);
+      font-family: "IBM Plex Sans", TikTokFont, Arial, Tahoma, PingFangSC,
+        sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 0.161px;
+      display: inline-block;
+      margin-right: 6px;
+      margin-top: 5px;
+    }
+
+    padding-top: 16px;
+    padding-left: 8px;
+
+    .link-container {
+      margin-bottom: 8px;
+      a {
+        cursor: pointer;
+        transition: all 0.3s;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .more-container {
+      margin-bottom: 8px;
+    }
+
+    .copyright {
+      cursor: pointer;
+    }
+  }
+}
+
+#root{
+    .tippy-box {
+        background-color: #fff;
+        .tippy-content {
+        }
+        .tippy-arrow {
+        }
+      }
+}
